@@ -35,7 +35,6 @@ const EditTodo = ({navigation, route}) => {
       : addTodo(VAL);
     userUpdateCreate
       .then(res => {
-        console.log(res.data, 'skjdks');
         navigation.navigate(ROUTES.MAIN_TODO, {refresh: 'true'});
       })
       .catch(err => {
@@ -44,12 +43,7 @@ const EditTodo = ({navigation, route}) => {
   }
 
   return (
-    <View
-      style={{
-        justifyContent: 'center',
-        alignItems: 'center',
-        flex: 1,
-      }}>
+    <View style={STYLES.main}>
       <CustomInput
         placeHolder="title"
         value={values.title}
@@ -59,6 +53,7 @@ const EditTodo = ({navigation, route}) => {
             title: val,
           })
         }
+        disable={VALUE?.item ? false : true}
       />
 
       <CustomInput
@@ -83,4 +78,10 @@ const EditTodo = ({navigation, route}) => {
 
 export default EditTodo;
 
-const styles = StyleSheet.create({});
+const STYLES = StyleSheet.create({
+  main: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+  },
+});

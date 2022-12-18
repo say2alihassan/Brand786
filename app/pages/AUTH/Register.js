@@ -1,13 +1,7 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  TouchableOpacity,
-} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React, {useState} from 'react';
 import CustomInput from '../../ui/CustomInput';
-import {colors} from '../../themes/Colors';
+
 import {RegisterRequest} from '../../services/authService';
 import {ROUTES} from '../../utils/Routes';
 import CustomButton from '../../ui/CustomButton';

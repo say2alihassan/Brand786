@@ -53,20 +53,10 @@ const MainTodo = ({navigation, route}) => {
       return (
         <TouchableOpacity
           onPress={() => navigation.navigate(ROUTES.EDIT_TODO, {item})}>
-          <View
-            style={{
-              height: 100,
-              width: 300,
-              borderRadius: 20,
-              borderWidth: 2,
-              borderColor: colors.BLUE,
-              padding: 20,
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-            }}>
+          <View style={STYLES.renderItem}>
             <View style={{width: 200}}>
-              <Text>{item?.title} </Text>
-              <Text>{item?.description} </Text>
+              <Text style={STYLES.BLACK}>{item?.title} </Text>
+              <Text style={STYLES.BLACK}>{item?.description} </Text>
             </View>
             <TouchableNativeFeedback onPress={() => delete_ITEM(item)}>
               <Icon
@@ -158,7 +148,20 @@ const MainTodo = ({navigation, route}) => {
 export default MainTodo;
 
 const STYLES = StyleSheet.create({
+  renderItem: {
+    height: 100,
+    width: 300,
+    borderRadius: 20,
+    borderWidth: 2,
+    borderColor: colors.BLUE,
+    padding: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
   Button: {
     width: 100,
+  },
+  BLACK: {
+    color: colors.BLACK,
   },
 });

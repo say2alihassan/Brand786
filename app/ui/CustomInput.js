@@ -13,6 +13,7 @@ const CustomInput = ({
   type,
   style,
   error,
+  disable,
 }) => {
   const [showPassword, setShowPassword] = useState(secure);
 
@@ -23,6 +24,7 @@ const CustomInput = ({
   return (
     <View style={[styles.container, style]}>
       <TextInput
+        editable={disable}
         placeholder={placeHolder}
         style={styles.input}
         value={value}
@@ -71,6 +73,7 @@ const styles = StyleSheet.create({
     paddingVertical: units.height / 34,
     fontSize: 17,
     flex: 1,
+    color: colors.BLACK,
   },
   icon: {
     marginRight: units.width / 16,

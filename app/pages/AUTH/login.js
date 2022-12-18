@@ -1,20 +1,12 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  TouchableOpacity,
-} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import React, {useState} from 'react';
 import CustomInput from '../../ui/CustomInput';
 import {colors} from '../../themes/Colors';
 import {useDispatch} from 'react-redux';
-import {RegisterRequest, loginRequest} from '../../services/authService';
+import {loginRequest} from '../../services/authService';
 import {ROUTES} from '../../utils/Routes';
 import {setAuthToken} from '../../store/reducers/userReducer';
 import CustomButton from '../../ui/CustomButton';
-import {Formik} from 'formik';
-import * as yup from 'yup';
 
 const Login = ({navigation}) => {
   const dispatch = useDispatch();

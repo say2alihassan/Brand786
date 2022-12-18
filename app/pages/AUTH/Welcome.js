@@ -8,6 +8,7 @@ import {
 import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {ROUTES} from '../../utils/Routes';
+import {colors} from '../../themes/Colors';
 
 const Welcome = ({navigation}) => {
   return (
@@ -15,7 +16,7 @@ const Welcome = ({navigation}) => {
       <Pressable
         onPress={() => navigation.navigate(ROUTES.LOGIN)}
         style={{justifyContent: 'center', flex: 1, alignItems: 'center'}}>
-        <Text style={{fontSize: 20, fontWeight: 'bold'}}>
+        <Text style={{fontSize: 20, fontWeight: 'bold', color: colors.BLACK}}>
           Welcome to The BRAND 786
         </Text>
       </Pressable>
